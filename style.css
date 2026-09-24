@@ -35,7 +35,7 @@ input {
     outline: none;
 }
 
-/* Class được kích hoạt bằng JS khi email sai */
+
 input.invalid {
     border-color: red;
     background-color: #ffe6e6;
@@ -45,7 +45,7 @@ input.invalid {
     color: red;
     font-size: 13px;
     margin-top: 5px;
-    min-height: 15px; /* Giữ khoảng trống để layout không bị giật khi hiện lỗi */
+    min-height: 15px;
 }
 
 button {
