@@ -1,21 +1,39 @@
-const email = document.querySelector("#email");
-const err = document.querySelector("#email-error");
-const form = document.querySelector("#myForm");
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Form bằng JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <!-- Trường Họ tên -->
+            <div class="form-group">
+                <label for="fullname">Họ tên</label>
+                <input type="text" id="fullname" autocomplete="off" />
+                <div id="fullname-error" class="error-text"></div>
+            </div>
 
-function validateEmail() {
-  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
-  err.textContent = ok ? "" : "Email không hợp lệ";
-  email.classList.toggle("invalid", !ok);
-  return ok;
-}
+            <!-- Trường Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" autocomplete="off" />
+                <div id="email-error" class="error-text"></div>
+            </div>
 
-email.addEventListener("input", validateEmail);
+            <!-- Trường SĐT -->
+            <div class="form-group">
+                <label for="phone">SĐT</label>
+                <input type="text" id="phone" autocomplete="off" />
+                <div id="phone-error" class="error-text"></div>
+            </div>
+            
+            <button type="submit" id="submit-btn">Gửi</button>
+        </form>
+    </div>
 
-form.addEventListener("submit", (e) => {
-  if (!validateEmail()) {
-    e.preventDefault(); 
-  } else {
-    e.preventDefault();
-    alert("Email hợp lệ! Form đã được gửi.");
-  }
-});
+    <script src="script.js"></script>
+</body>
+</html>
